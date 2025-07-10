@@ -5,7 +5,14 @@ import '../widgets/spot_card.dart';
 import '../services/favorites_service.dart';
 
 class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
+  final Set<String> favorites;
+  final Function(String id) onFavoriteToggle;
+
+  const SearchScreen({
+    super.key,
+    required this.favorites,
+    required this.onFavoriteToggle,
+  });
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -13,26 +20,6 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   String _query = '';
-  Set<String> _favorites = {};
-  final _favoritesService = FavoritesService();
-
-  @override
-  void initState() {
-    super.initState();
-    _loadFavorites();
-  }
-
-  Future<void> _loadFavorites() async {
-    _favorites = await _favoritesService.loadFavorites();
-    setState(() {});
-  }
-
-  void _toggleFavorite(String id) {
-    setState(() {
-      _favorites.contains(id) ? _favorites.remove(id) : _favorites.add(id);
-    });
-    _favoritesService.saveFavorites(_favorites);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,41 +34,46 @@ class _SearchScreenState extends State<SearchScreen> {
               onChanged: (value) => setState(() => _query = value),
             ),
           ),
-          Expanded(
-            child: StreamBuilder<QuerySnapshot>(
-              stream: FirebaseFirestore.instance.collection('spots').snapshots(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  return const Center(child: CircularProgressIndicator());
-                }
+          if (_query.isEmpty)
+            const Expanded(
+              child: Center(child: Text("Start typing to search")),
+            )
+          else
+            Expanded(
+              child: StreamBuilder<QuerySnapshot>(
+                stream: FirebaseFirestore.instance.collection('spots').snapshots(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
 
-                final spots = snapshot.data!.docs
-                    .map((doc) => TouristSpot.fromMap(doc.id, doc.data() as Map<String, dynamic>))
-                    .where((spot) => spot.name.toLowerCase().contains(_query.toLowerCase()))
-                    .toList();
+                  final spots = snapshot.data!.docs
+                      .map((doc) => TouristSpot.fromMap(doc.id, doc.data() as Map<String, dynamic>))
+                      .where((spot) => spot.name.toLowerCase().contains(_query.toLowerCase()))
+                      .toList();
 
-                if (spots.isEmpty) {
-                  return const Center(child: Text("No matches found"));
-                }
+                  if (spots.isEmpty) {
+                    return const Center(child: Text("No matches found"));
+                  }
 
-                return GridView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemCount: spots.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 0.75,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
-                  ),
-                  itemBuilder: (_, i) => SpotCard(
-                    spot: spots[i],
-                    isFavorite: _favorites.contains(spots[i].id),
-                    onFavoriteToggle: () => _toggleFavorite(spots[i].id),
-                  ),
-                );
-              },
+                  return GridView.builder(
+                    padding: const EdgeInsets.all(8),
+                    itemCount: spots.length,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.75,
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8,
+                    ),
+                    itemBuilder: (_, i) => SpotCard(
+                      spot: spots[i],
+                      isFavorite: widget.favorites.contains(spots[i].id),
+                      onFavoriteToggle: () => widget.onFavoriteToggle(spots[i].id),
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
         ],
       ),
     );

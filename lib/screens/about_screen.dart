@@ -10,7 +10,7 @@ class AboutScreen extends StatelessWidget {
       body: const Padding(
         padding: EdgeInsets.all(20),
         child: Text(
-          'Tourism App\n\nDiscover beautiful spots in the Philippines.\n\nDeveloped with ❤️ using Flutter & Firebase.',
+          'Tourism App\n\nDiscover beautiful spots in the Philippines.\n\nDeveloped By Whilmer using Flutter & Firebase.',
           style: TextStyle(fontSize: 16),
         ),
       ),

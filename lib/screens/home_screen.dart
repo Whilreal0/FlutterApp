@@ -62,8 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   itemBuilder: (_, i) => SpotCard(
                     spot: filtered[i],
-                    isFavorite: false,
-                    onFavoriteToggle: () {},
+                    isFavorite: widget.favorites.contains(filtered[i].id),
+                    onFavoriteToggle: () =>
+                        widget.onFavoriteToggle(filtered[i].id),
                   ),
                 ),
               ),

@@ -11,7 +11,7 @@ class CategoryFilter extends StatelessWidget {
     final categories = ['All', 'Mountain', 'Sea', 'Historical', 'Cultural', 'Religious'];
 
     return SizedBox(
-      height: 50,
+      height: 60,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
@@ -21,8 +21,9 @@ class CategoryFilter extends StatelessWidget {
           return GestureDetector(
             onTap: () => onChanged(cat),
             child: Container(
+              alignment: Alignment.center,
               margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               decoration: BoxDecoration(
                 color: isSelected ? Colors.teal : Colors.grey.shade300,
                 borderRadius: BorderRadius.circular(20),
@@ -31,7 +32,8 @@ class CategoryFilter extends StatelessWidget {
                 cat,
                 style: TextStyle(
                   color: isSelected ? Colors.white : Colors.black,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15
                 ),
               ),
             ),

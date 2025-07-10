@@ -38,23 +38,18 @@ class _MainScaffoldState extends State<MainScaffold> {
   @override
   Widget build(BuildContext context) {
     final screens = [
-      HomeScreen(
-        favorites: _favorites,
-        onFavoriteToggle: _toggleFavorite,
-      ),
-      const SearchScreen(),
+      HomeScreen(favorites: _favorites, onFavoriteToggle: _toggleFavorite),
+      SearchScreen(favorites: _favorites, onFavoriteToggle: _toggleFavorite),
       FavoritesScreen(favorites: _favorites),
       const AboutScreen(),
     ];
 
     return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: screens,
-      ),
+      body: IndexedStack(index: _selectedIndex, children: screens),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
-        onDestinationSelected: (index) => setState(() => _selectedIndex = index),
+        onDestinationSelected: (index) =>
+            setState(() => _selectedIndex = index),
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
           NavigationDestination(icon: Icon(Icons.search), label: "Search"),
