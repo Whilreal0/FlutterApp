@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/tourist_spot.dart';
 
 class FirestoreService {
-  final _spots = FirebaseFirestore.instance.collection('spots');
+  final _spots = FirebaseFirestore.instance.collection('spots'); // updated
 
   Stream<List<TouristSpot>> getSpots() {
     return _spots.snapshots().map((snapshot) {

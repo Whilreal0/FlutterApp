@@ -1,14 +1,4 @@
-const admin = require("firebase-admin");
-const serviceAccount = require("./serviceAccountKey.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-const db = admin.firestore();
-
-// ✅ Replace or expand this array with your updated tourist spot data
-const spots = [
+[
   {
     "name": "Tangadan Falls",
     "description": "A majestic waterfall ideal for trekking and swimming.",
@@ -284,35 +274,4 @@ const spots = [
     "photos": ["https://picsum.photos/id/1250/400/300"],
     "category": "Cultural"
   }
-];
-
-// 🔁 Delete all documents from the 'spots' collection
-async function deleteAllDocuments() {
-  const snapshot = await db.collection("spots").get();
-  const batch = db.batch();
-
-  snapshot.docs.forEach((doc) => batch.delete(doc.ref));
-
-  await batch.commit();
-  console.log("🗑️ All existing documents in 'spots' collection deleted.");
-}
-
-// ➕ Upload new documents
-async function uploadNewSpots() {
-  const batch = db.batch();
-  const spotsRef = db.collection("spots");
-
-  spots.forEach((spot) => {
-    const docRef = spotsRef.doc(); // auto-generated ID
-    batch.set(docRef, spot);
-  });
-
-  await batch.commit();
-  console.log("✅ New tourist spots uploaded to 'spots' collection.");
-}
-
-// 🚀 Run both
-(async () => {
-  await deleteAllDocuments();
-  await uploadNewSpots();
-})();
+]

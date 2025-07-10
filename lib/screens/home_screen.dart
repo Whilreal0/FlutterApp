@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import '../models/tourist_spot.dart';
 import '../services/firestore_service.dart';
-import '../services/favorites_service.dart';
 import '../widgets/spot_card.dart';
-import 'favorites_screen.dart';
+import '../widgets/spot_carousel.dart';
+import '../widgets/category_filter.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final Set<String> favorites;
+  final Function(String id) onFavoriteToggle;
+
+  const HomeScreen({
+    super.key,
+    required this.favorites,
+    required this.onFavoriteToggle,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -14,76 +21,37 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final FirestoreService _firestore = FirestoreService();
-  final FavoritesService _favoritesService = FavoritesService();
-  Set<String> _favorites = {};
-  String _search = "";
-
-  @override
-  void initState() {
-    super.initState();
-    _loadFavorites();
-  }
-
-  Future<void> _loadFavorites() async {
-    _favorites = await _favoritesService.loadFavorites();
-    setState(() {});
-  }
-
-  void _toggleFavorite(String id) {
-    setState(() {
-      _favorites.contains(id) ? _favorites.remove(id) : _favorites.add(id);
-    });
-    _favoritesService.saveFavorites(_favorites);
-  }
+  String _selectedCategory = 'All';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Tourist Spots'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.favorite),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => FavoritesScreen(favorites: _favorites),
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: TextField(
-              decoration: const InputDecoration(labelText: 'Search...'),
-              onChanged: (value) => setState(() => _search = value),
-            ),
-          ),
-          Expanded(
-            child: StreamBuilder<List<TouristSpot>>(
-              stream: _firestore.getSpots(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                  return const Center(child: Text("No tourist spot found"));
-                }
+      appBar: AppBar(title: const Text("Tourist Spots")),
+      body: StreamBuilder<List<TouristSpot>>(
+        stream: _firestore.getSpots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
 
-                final filtered = snapshot.data!
-                    .where((s) => s.name.toLowerCase().contains(_search.toLowerCase()))
-                    .toList();
+          final spots = snapshot.data!;
+          final topSpots = spots.take(5).toList();
 
-                if (filtered.isEmpty) {
-                  return const Center(child: Text("No matches found"));
-                }
+          final filtered = _selectedCategory == 'All'
+              ? spots
+              : spots.where((s) => s.category == _selectedCategory).toList();
 
-                return GridView.builder(
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SpotCarousel(spots: topSpots),
+              CategoryFilter(
+                selected: _selectedCategory,
+                onChanged: (value) => setState(() => _selectedCategory = value),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child: GridView.builder(
                   padding: const EdgeInsets.all(8),
                   itemCount: filtered.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -94,14 +62,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   itemBuilder: (_, i) => SpotCard(
                     spot: filtered[i],
-                    isFavorite: _favorites.contains(filtered[i].id),
-                    onFavoriteToggle: () => _toggleFavorite(filtered[i].id),
+                    isFavorite: false,
+                    onFavoriteToggle: () {},
                   ),
-                );
-              },
-            ),
-          ),
-        ],
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
