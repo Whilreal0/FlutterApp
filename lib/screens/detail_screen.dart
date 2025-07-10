@@ -46,21 +46,42 @@ class DetailScreen extends StatelessWidget {
                 Text(
                   spot.name,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                const SizedBox(height: 8),
+                Chip(
+                  label: Text(
+                    spot.category,
+                    style: const TextStyle(color: Colors.white),
                   ),
+                  backgroundColor: Colors.teal,
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    const Icon(Icons.location_on, size: 20, color: Colors.grey),
+                    const SizedBox(width: 4),
+                    Text(
+                      '${spot.barangay}, ${spot.municipality}, ${spot.province}',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  spot.province,
-                  style: TextStyle(
-                    color: Colors.teal,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  'Region: ${spot.region}',
+                  style: const TextStyle(color: Colors.grey),
                 ),
-                const SizedBox(height: 20),
-                Text(spot.description, style: const TextStyle(fontSize: 16)),
-                const SizedBox(height: 20),
+                const SizedBox(height: 16),
+                Text(
+                  spot.description,
+                  style: const TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 24),
                 Text(
                   '📍 Latitude: ${spot.lat}',
                   style: const TextStyle(color: Colors.grey),

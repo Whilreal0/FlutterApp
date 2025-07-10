@@ -15,18 +15,22 @@ class FavoritesScreen extends StatelessWidget {
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('spots').snapshots(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
 
-          final all = snapshot.data!.docs
+          final allSpots = snapshot.data!.docs
               .map((doc) => TouristSpot.fromMap(doc.id, doc.data() as Map<String, dynamic>))
               .where((spot) => favorites.contains(spot.id))
               .toList();
 
-          if (all.isEmpty) return const Center(child: Text("No favorites yet"));
+          if (allSpots.isEmpty) {
+            return const Center(child: Text("No favorites yet"));
+          }
 
           return GridView.builder(
             padding: const EdgeInsets.all(8),
-            itemCount: all.length,
+            itemCount: allSpots.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 0.75,
@@ -34,9 +38,9 @@ class FavoritesScreen extends StatelessWidget {
               mainAxisSpacing: 8,
             ),
             itemBuilder: (_, i) => SpotCard(
-              spot: all[i],
+              spot: allSpots[i],
               isFavorite: true,
-              onFavoriteToggle: () {}, // Read-only
+              onFavoriteToggle: () {}, // Read-only on this screen
             ),
           );
         },
