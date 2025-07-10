@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/tourist_spot.dart';
+// add url launcher
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailScreen extends StatelessWidget {
   final TouristSpot spot;
@@ -12,6 +14,17 @@ class DetailScreen extends StatelessWidget {
     required this.isFavorite,
     required this.onFavoriteToggle,
   });
+  // function for url launcher map
+  Future<void> _openGoogleMaps(double lat, double lng) async {
+    final url = Uri.parse(
+      'https://www.google.com/maps/search/?api=1&query=$lat,$lng',
+    );
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    } else {
+      throw 'Could not launch Maps';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +59,8 @@ class DetailScreen extends StatelessWidget {
                 Text(
                   spot.name,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Chip(
@@ -77,10 +90,8 @@ class DetailScreen extends StatelessWidget {
                   style: const TextStyle(color: Colors.grey),
                 ),
                 const SizedBox(height: 16),
-                Text(
-                  spot.description,
-                  style: const TextStyle(fontSize: 16),
-                ),
+
+                Text(spot.description, style: const TextStyle(fontSize: 16)),
                 const SizedBox(height: 24),
                 Text(
                   '📍 Latitude: ${spot.lat}',
@@ -89,6 +100,11 @@ class DetailScreen extends StatelessWidget {
                 Text(
                   '📍 Longitude: ${spot.lng}',
                   style: const TextStyle(color: Colors.grey),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () => _openGoogleMaps(spot.lat, spot.lng),
+                  icon: const Icon(Icons.map),
+                  label: const Text("Open in Google Maps"),
                 ),
               ],
             ),

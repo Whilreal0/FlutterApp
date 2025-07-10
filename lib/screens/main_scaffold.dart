@@ -4,6 +4,7 @@ import 'home_screen.dart';
 import 'favorites_screen.dart';
 import 'search_screen.dart';
 import 'about_screen.dart';
+import 'municipality_screen.dart';
 
 class MainScaffold extends StatefulWidget {
   const MainScaffold({super.key});
@@ -39,6 +40,10 @@ class _MainScaffoldState extends State<MainScaffold> {
   Widget build(BuildContext context) {
     final screens = [
       HomeScreen(favorites: _favorites, onFavoriteToggle: _toggleFavorite),
+      MunicipalityScreen(
+        favorites: _favorites,
+        onFavoriteToggle: _toggleFavorite,
+      ),
       SearchScreen(favorites: _favorites, onFavoriteToggle: _toggleFavorite),
       FavoritesScreen(favorites: _favorites),
       const AboutScreen(),
@@ -52,6 +57,10 @@ class _MainScaffoldState extends State<MainScaffold> {
             setState(() => _selectedIndex = index),
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+          NavigationDestination(
+            icon: Icon(Icons.location_city),
+            label: "Places",
+          ),
           NavigationDestination(icon: Icon(Icons.search), label: "Search"),
           NavigationDestination(icon: Icon(Icons.favorite), label: "Favorites"),
           NavigationDestination(icon: Icon(Icons.info), label: "About"),

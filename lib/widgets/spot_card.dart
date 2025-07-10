@@ -56,22 +56,33 @@ class SpotCard extends StatelessWidget {
                 bottom: 0,
                 left: 0,
                 right: 0,
-                child: Container(
-                  padding: const EdgeInsets.all(10),
-                  color: Colors.black.withOpacity(0.6),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        spot.name,
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        spot.province,
-                        style: const TextStyle(color: Colors.white70),
-                      ),
-                    ],
+                child: SizedBox(
+                  height: 60, // Set your desired height
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    color: Colors.black.withOpacity(0.6),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment:
+                          MainAxisAlignment.center, // vertically center content
+                      children: [
+                        Text(
+                          spot.name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Text(
+                          spot.municipality,
+                          style: const TextStyle(color: Colors.white70),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
