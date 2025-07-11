@@ -1,0 +1,1237 @@
+[
+  {
+    "name": "Agoo",
+    "province": "La Union",
+    "lat": 16.3223,
+    "lng": 120.3660,
+    "description": "A coastal and historical municipality, famous for its whistling pine trees, religious heritage, and seaside economy.",
+    "history": "Founded in 1578 by Juan de Salcedo; early port for Japanese and Chinese traders and later integrated into La Union in 1850.",
+    "population": 66028,
+    "classification": "1st class",
+    "barangay_count": 49,
+    "tourist_spots": [
+      {
+        "name": "Basilica Minore of Our Lady of Charity",
+        "description": "A revered pilgrimage site known for its centuries-old religious significance and beautiful architecture.",
+        "barangay": "Poblacion",
+        "lat": 16.3229,
+        "lng": 120.3612,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "religious"
+      },
+      {
+        "name": "Museo de Iloko",
+        "description": "A cultural museum showcasing Ilocano heritage and artifacts.",
+        "barangay": "Sta. Barbara",
+        "lat": 16.3215,
+        "lng": 120.3600,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "Museum"
+      },
+      {
+        "name": "Agoo Damortis National Seashore Park",
+        "description": "A protected coastal area ideal for bird watching, fishing, and nature walks.",
+        "barangay": "Damortis",
+        "lat": 16.3041,
+        "lng": 120.3845,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "park"
+      },
+      {
+        "name": "Agoo Eco Park",
+        "description": "Popular beaches for swimming, sunset viewing, and local seafood.",
+        "barangay": "Santa Rita",
+        "lat": 16.3150,
+        "lng": 120.3680,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "beach"
+      }
+    ],
+    "festivals": [
+      "Feast of Our Lady of Charity (May 4)",
+      "Dinengdeng Festival"
+    ],
+    "specialties": [
+      "Religious pilgrimage",
+      "Ilocano heritage artifacts",
+      "Seafood and coastal resort recreation"
+    ]
+  },
+  {
+    "name": "Aringay",
+    "province": "La Union",
+    "lat": 16.4002,
+    "lng": 120.3421,
+    "description": "A town with a rich historical past, lush agricultural lands, and scenic river and coastal views.",
+    "history": "Originally part of Pangasinan, Aringay was a major trading port before being integrated into La Union in 1850.",
+    "population": 50000,
+    "classification": "2nd class",
+    "barangay_count": 24,
+    "tourist_spots": [
+      {
+        "name": "Aringay River",
+        "description": "A scenic river perfect for kayaking, fishing, and riverside picnics.",
+        "barangay": "San Benito",
+        "lat": 16.4010,
+        "lng": 120.3390,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/500/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/500/400/300"
+          }
+        ],
+        "category": "river"
+      },
+      {
+        "name": "St. Lucy Parish Church",
+        "description": "A historic church known for its colonial-era architecture and religious significance.",
+        "barangay": "Poblacion",
+        "lat": 16.4005,
+        "lng": 120.3400,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/500/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/500/400/300"
+          }
+        ],
+        "category": "religious"
+      },
+      {
+        "name": "Aringay Beach",
+        "description": "A quiet coastal stretch ideal for morning walks, swimming, and seaside relaxation.",
+        "barangay": "Sto. Tomas",
+        "lat": 16.3905,
+        "lng": 120.3460,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/500/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/500/400/300"
+          }
+        ],
+        "category": "beach"
+      },
+      {
+        "name": "Bued River Viewpoint",
+        "description": "A serene spot overlooking the river valley and nearby mountain range.",
+        "barangay": "San Eugenio",
+        "lat": 16.4120,
+        "lng": 120.3505,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/500/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/500/400/300"
+          }
+        ],
+        "category": "Viewpoint"
+      }
+    ],
+    "festivals": [
+      "Aringay Town Fiesta (December 13)",
+      "Basi Festival"
+    ],
+    "specialties": [
+      "Basi (sugarcane wine)",
+      "Rice farming and fresh river catch",
+      "Historical sites"
+    ]
+  },
+  {
+    "name": "Bacnotan",
+    "province": "La Union",
+    "lat": 16.7167,
+    "lng": 120.3167,
+    "description": "A municipality known for its cement industry, black sand beaches, and academic institutions.",
+    "history": "Named after the Bacnotan tree; site of early Spanish settlements and home to one of the oldest public high schools in La Union.",
+    "population": 43000,
+    "classification": "2nd class",
+    "barangay_count": 47,
+    "tourist_spots": [
+      {
+        "name": "Bacnotan Cement Factory Viewpoint",
+        "description": "An elevated view of one of the largest cement plants in the region.",
+        "barangay": "Quirino",
+        "lat": 16.7235,
+        "lng": 120.3112,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "industrial"
+      },
+      {
+        "name": "Darigayos Beach",
+        "description": "A calm beach perfect for sunbathing and shell collecting.",
+        "barangay": "Darigayos",
+        "lat": 16.7300,
+        "lng": 120.3050,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "beach"
+      }
+    ],
+    "festivals": [
+      "Diro Festival (April)"
+    ],
+    "specialties": [
+      "Cement production",
+      "Fresh seafood",
+      "Surfing and beach activities"
+    ]
+  },
+  {
+    "name": "Bagulin",
+    "province": "La Union",
+    "lat": 16.6167,
+    "lng": 120.4500,
+    "description": "A mountainous and landlocked municipality known for its indigenous culture, forest trails, and upland farming.",
+    "history": "Originally settled by the Kankanaey people, Bagulin became a municipality in 1963 through an executive order separating it from Burgos.",
+    "population": 15000,
+    "classification": "5th class",
+    "barangay_count": 10,
+    "tourist_spots": [
+      {
+        "name": "Bimmobil Falls",
+        "description": "A majestic waterfall ideal for trekking and swimming.",
+        "barangay": "Wallayan",
+        "lat": 16.6102,
+        "lng": 120.4421,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "mountain"
+      },
+      {
+        "name": "Bagulin Rice Terraces",
+        "description": "Man-made rice terraces carved by the local community, reflecting traditional upland farming methods.",
+        "barangay": "Cardoz",
+        "lat": 16.6188,
+        "lng": 120.4605,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "cultural"
+      }
+    ],
+    "festivals": [
+      "Upland Festival (May)"
+    ],
+    "specialties": [
+      "Kankanaey weaving and crafts",
+      "Upland rice and root crops",
+      "Eco-tourism and hiking"
+    ]
+  },
+  {
+    "name": "Balaoan",
+    "province": "La Union",
+    "lat": 16.8167,
+    "lng": 120.4000,
+    "description": "A historical and agricultural municipality known for its sugarcane fields, scenic rivers, and vibrant traditions.",
+    "history": "One of the oldest towns in La Union, Balaoan was once a major religious center during the Spanish period.",
+    "population": 41000,
+    "classification": "2nd class",
+    "barangay_count": 36,
+    "tourist_spots": [
+      {
+        "name": "Balaoan Church (St. Nicholas of Tolentine Parish)",
+        "description": "A Spanish-era church with a well-preserved bell tower and stone architecture.",
+        "barangay": "Poblacion",
+        "lat": 16.8202,
+        "lng": 120.4055,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "religious"
+      },
+      {
+        "name": "Amburayan River",
+        "description": "A wide river ideal for kayaking, fishing, and riverside picnics.",
+        "barangay": "Naguirangan",
+        "lat": 16.8250,
+        "lng": 120.3950,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "river"
+      }
+    ],
+    "festivals": [
+      "Minag-asan Festival (February)"
+    ],
+    "specialties": [
+      "Sugarcane and vinegar products",
+      "Traditional Ilocano dishes",
+      "Handmade baskets and brooms"
+    ]
+  },
+  {
+    "name": "Bangar",
+    "province": "La Union",
+    "lat": 16.8970,
+    "lng": 120.4300,
+    "description": "The northernmost town of La Union, Bangar is known for its inabel (woven cloth), historic churches, and riverside landscapes.",
+    "history": "Established during the Spanish colonial era, Bangar became an important religious and weaving center in Northern Luzon.",
+    "population": 38000,
+    "classification": "3rd class",
+    "barangay_count": 33,
+    "tourist_spots": [
+      {
+        "name": "St. Christopher Parish Church",
+        "description": "A Spanish-era church featuring antique altars and relics.",
+        "barangay": "Poblacion",
+        "lat": 16.8975,
+        "lng": 120.4310,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "religious"
+      },
+      {
+        "name": "Amburayan River Viewpoint",
+        "description": "A scenic riverside spot ideal for fishing, leisure, and photography.",
+        "barangay": "Paratong Norte",
+        "lat": 16.9000,
+        "lng": 120.4400,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "river"
+      }
+    ],
+    "festivals": [
+      "Abel Festival (November)"
+    ],
+    "specialties": [
+      "Inabel weaving",
+      "Rice delicacies",
+      "River fishing"
+    ]
+  },
+  {
+    "name": "Bauang",
+    "province": "La Union",
+    "lat": 16.5333,
+    "lng": 120.3333,
+    "description": "A coastal municipality known for its beaches, grape farms, and historical heritage as a former Spanish garrison town.",
+    "history": "Founded in the 16th century, Bauang was a major Spanish settlement and an important trading post along the coast.",
+    "population": 75532,
+    "classification": "1st class",
+    "barangay_count": 39,
+    "tourist_spots": [
+      {
+        "name": "Bauang Beach",
+        "description": "A popular beach destination known for its white sands and sunset views.",
+        "barangay": "Paringao",
+        "lat": 16.5280,
+        "lng": 120.3215,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "beach"
+      },
+      {
+        "name": "Gapuz Grapes Farm",
+        "description": "One of the pioneering grape farms in the region, offering tours and fruit picking.",
+        "barangay": "Urayong",
+        "lat": 16.5241,
+        "lng": 120.3412,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "farm"
+      }
+    ],
+    "festivals": [
+      "Grape Festival (March)"
+    ],
+    "specialties": [
+      "Grapes and wine",
+      "Beach resorts and seafood",
+      "Heritage sites"
+    ]
+  },
+  {
+    "name": "Burgos",
+    "province": "La Union",
+    "lat": 16.6884,
+    "lng": 120.4784,
+    "description": "An upland town known for its cool climate, scenic landscapes, and traditional agriculture.",
+    "history": "Originally a sitio of Naguilian, Burgos became an independent municipality named after martyred priest Fr. José Burgos.",
+    "population": 8167,
+    "classification": "5th class",
+    "barangay_count": 12,
+    "tourist_spots": [
+      {
+        "name": "Bulalakaw Falls",
+        "description": "A majestic waterfall ideal for trekking and swimming.",
+        "barangay": "Delles",
+        "lat": 16.7000,
+        "lng": 120.4900,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "mountain"
+      },
+      {
+        "name": "Mount Burgos Viewpoint",
+        "description": "Offers a panoramic view of the town and surrounding hills, popular with hikers.",
+        "barangay": "Agpay",
+        "lat": 16.6920,
+        "lng": 120.4850,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "mountain"
+      }
+    ],
+    "festivals": [
+      "Bulalakaw Festival (May)"
+    ],
+    "specialties": [
+      "Root crops",
+      "Upland farming",
+      "Eco-tourism trails"
+    ]
+  },
+  {
+    "name": "Caba",
+    "province": "La Union",
+    "lat": 16.4327,
+    "lng": 120.3494,
+    "description": "A peaceful coastal town known for its beach resorts and as the hometown of Philippine revolutionary Diego Silang.",
+    "history": "Caba was once part of Aringay and became independent during the Spanish period. It played a role during the Philippine revolution.",
+    "population": 23600,
+    "classification": "4th class",
+    "barangay_count": 17,
+    "tourist_spots": [
+      {
+        "name": "Diego Silang Monument",
+        "description": "A historical marker commemorating the life and heroism of Diego Silang.",
+        "barangay": "Poblacion Norte",
+        "lat": 16.4330,
+        "lng": 120.3485,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "historical"
+      },
+      {
+        "name": "Caba Seaside",
+        "description": "A stretch of calm beaches ideal for family outings and fishing.",
+        "barangay": "Santiago Norte",
+        "lat": 16.4280,
+        "lng": 120.3400,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "beach"
+      }
+    ],
+    "festivals": [
+      "Caba Town Fiesta (February)",
+      "Diego Silang Day (December)"
+    ],
+    "specialties": [
+      "Beachside tourism",
+      "Local crafts",
+      "Historical heritage"
+    ]
+  },
+  {
+    "name": "Luna",
+    "province": "La Union",
+    "lat": 16.6794,
+    "lng": 120.3536,
+    "description": "A serene coastal town known for its pebble beaches and historic watchtower.",
+    "history": "Originally known as Namacpacan, Luna was renamed in honor of the Luna brothers, national heroes. It served as a coastal watchpoint during Spanish rule.",
+    "population": 37118,
+    "classification": "3rd class",
+    "barangay_count": 40,
+    "tourist_spots": [
+      {
+        "name": "Baluarte Watchtower",
+        "description": "A Spanish-era watchtower built to guard against pirate raids.",
+        "barangay": "Barangay Victoria",
+        "lat": 16.6800,
+        "lng": 120.3500,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "historical"
+      },
+      {
+        "name": "Pebble Beach",
+        "description": "A unique beach filled with smooth pebbles, perfect for photography and sunset viewing.",
+        "barangay": "Nalvo Norte",
+        "lat": 16.6825,
+        "lng": 120.3560,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "beach"
+      }
+    ],
+    "festivals": [
+      "Impakabsat Festival (December)",
+      "Our Lady of Namacpacan Fiesta (November)"
+    ],
+    "specialties": [
+      "Pebble crafts",
+      "Seafood dishes",
+      "Historical tourism"
+    ]
+  },
+  {
+    "name": "Naguilian",
+    "province": "La Union",
+    "lat": 16.5331,
+    "lng": 120.4032,
+    "description": "An inland municipality known for its basi (sugarcane wine) industry and agricultural productivity.",
+    "history": "Founded as a mission station during the Spanish era, Naguilian became a thriving agricultural town and home of the traditional basi wine.",
+    "population": 53861,
+    "classification": "2nd class",
+    "barangay_count": 37,
+    "tourist_spots": [
+      {
+        "name": "Basi Wine Processing Center",
+        "description": "Showcases the traditional production of basi, a native sugarcane wine.",
+        "barangay": "Ortiz",
+        "lat": 16.5355,
+        "lng": 120.4045,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "cultural"
+      },
+      {
+        "name": "Naguilian River",
+        "description": "A river that provides opportunities for bamboo rafting and riverside picnics.",
+        "barangay": "Cabaritan Norte",
+        "lat": 16.5320,
+        "lng": 120.4100,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "river"
+      }
+    ],
+    "festivals": [
+      "Basi Festival (April)"
+    ],
+    "specialties": [
+      "Basi wine",
+      "Tobacco products",
+      "Sugarcane farming"
+    ]
+  },
+  {
+    "name": "Pugo",
+    "province": "La Union",
+    "lat": 16.3424,
+    "lng": 120.4704,
+    "description": "A scenic upland municipality at the foot of the Cordillera, known for eco-tourism and adventure activities.",
+    "history": "Pugo, originally a forested area, developed as a community for settlers from nearby provinces. Its name means 'islet' in Ilocano, referring to its elevated location.",
+    "population": 19035,
+    "classification": "5th class",
+    "barangay_count": 14,
+    "tourist_spots": [
+      {
+        "name": "PUGAD (Pugo Adventure Park)",
+        "description": "An eco-adventure park offering zip lines, wall climbing, ATV rides, and river swimming.",
+        "barangay": "Cares",
+        "lat": 16.3402,
+        "lng": 120.4728,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "Adventure"
+      },
+      {
+        "name": "Tapuakan River",
+        "description": "A pristine river known for its crystal-clear waters, natural pools, and rock formations.",
+        "barangay": "Ambalite",
+        "lat": 16.3445,
+        "lng": 120.4781,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "river"
+      }
+    ],
+    "festivals": [
+      "Pugo Festival (January)"
+    ],
+    "specialties": [
+      "Eco-tourism",
+      "Mountain trekking",
+      "Adventure sports"
+    ]
+  },
+  {
+    "name": "Rosario",
+    "province": "La Union",
+    "lat": 16.2300,
+    "lng": 120.5000,
+    "description": "The southern gateway to La Union, known for its forests, caves, and being a historical transportation hub.",
+    "history": "Rosario was once a forested area inhabited by Aetas and Ilocano settlers. It became an important transport town during the Spanish period due to its location along major roads.",
+    "population": 60760,
+    "classification": "1st class",
+    "barangay_count": 33,
+    "tourist_spots": [
+      {
+        "name": "Marcos Park and Nature Trail",
+        "description": "A peaceful park named after former President Marcos, featuring trails, picnic areas, and native flora.",
+        "barangay": "Poblacion West",
+        "lat": 16.2325,
+        "lng": 120.5012,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "Park"
+      },
+      {
+        "name": "Lomboy Cave",
+        "description": "A cave system with limestone formations, ideal for beginner spelunkers and adventurers.",
+        "barangay": "Cadallarao",
+        "lat": 16.2250,
+        "lng": 120.5120,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "Cave"
+      }
+    ],
+    "festivals": [
+      "Mano Po Festival (March)"
+    ],
+    "specialties": [
+      "Local root crops",
+      "Forest and cave exploration",
+      "Gateway commerce"
+    ]
+  },
+  {
+    "name": "San Fernando",
+    "province": "La Union",
+    "lat": 16.6156,
+    "lng": 120.3194,
+    "description": "The capital and center of commerce, culture, and governance in La Union, blending urban life with historical and beach attractions.",
+    "history": "Established in 1786, San Fernando became the provincial capital of La Union in 1850. It played vital roles in the Spanish and American colonial periods and World War II.",
+    "population": 125640,
+    "classification": "1st class (city)",
+    "barangay_count": 59,
+    "tourist_spots": [
+      {
+        "name": "Ma-Cho Temple",
+        "description": "A Taoist temple honoring the Chinese sea goddess Mazu, offering panoramic views and cultural immersion.",
+        "barangay": "Quezon Hill",
+        "lat": 16.6141,
+        "lng": 120.3130,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "religious"
+      },
+      {
+        "name": "Pindangan Ruins",
+        "description": "Remnants of a 17th-century church, one of the earliest religious structures in the region.",
+        "barangay": "Barangay San Vicente",
+        "lat": 16.6185,
+        "lng": 120.3170,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "historical"
+      },
+      {
+        "name": "Pagoda Hill",
+        "description": "A hilltop with a pagoda offering panoramic views of the city and the sea.",
+        "barangay": "Camp 3",
+        "lat": 16.6172,
+        "lng": 120.3125,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1025/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1035/400/300"
+          }
+        ],
+        "category": "Viewpoint"
+      }
+    ],
+    "festivals": [
+      "Ma-Cho Festival (September)",
+      "City Fiesta (February)"
+    ],
+    "specialties": [
+      "Chinese-Filipino cultural sites",
+      "Urban tourism and shopping",
+      "Historical landmarks"
+    ]
+  },
+  {
+    "name": "San Gabriel",
+    "province": "La Union",
+    "lat": 16.7450,
+    "lng": 120.4086,
+    "description": "An upland town with lush forests and waterfalls, a haven for eco-tourists and nature lovers.",
+    "history": "Founded in the 1800s, San Gabriel has long been home to indigenous groups like the Kankanaey and remains a quiet rural town rich in natural resources.",
+    "population": 17913,
+    "classification": "4th class",
+    "barangay_count": 15,
+    "tourist_spots": [
+      {
+        "name": "Tangadan Falls",
+        "description": "One of the most famous waterfalls in La Union, accessible via a scenic hike and perfect for swimming.",
+        "barangay": "Duplas",
+        "lat": 16.7260,
+        "lng": 120.4101,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "Waterfall"
+      },
+      {
+        "name": "Lon-oy Springs",
+        "description": "A major water source supplying nearby towns, located in a protected and scenic forest area.",
+        "barangay": "Lon-oy",
+        "lat": 16.7380,
+        "lng": 120.4122,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "river"
+      }
+    ],
+    "festivals": [
+      "Rambak ti San Gabriel (April)"
+    ],
+    "specialties": [
+      "Waterfalls and eco-tourism",
+      "Highland spring water",
+      "Kankanaey culture and crafts"
+    ]
+  },
+  {
+    "name": "San Juan",
+    "province": "La Union",
+    "lat": 16.6778,
+    "lng": 120.3333,
+    "description": "Known as the Surfing Capital of Northern Luzon, San Juan is a vibrant coastal town drawing surfers and beachgoers from across the country.",
+    "history": "Founded as a Spanish mission in the 1700s, San Juan has grown from a quiet fishing town into a booming tourism hotspot, especially for surfing.",
+    "population": 40790,
+    "classification": "3rd class",
+    "barangay_count": 41,
+    "tourist_spots": [
+      {
+        "name": "Urbiztondo Beach",
+        "description": "A world-class surf destination with consistent waves and a lively tourism scene.",
+        "barangay": "Urbiztondo",
+        "lat": 16.6733,
+        "lng": 120.3199,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "beach"
+      },
+      {
+        "name": "San Juan Beach Boardwalk",
+        "description": "A scenic beachfront walk with cafés, shops, and ocean views perfect for sunset watching.",
+        "barangay": "Ili Sur",
+        "lat": 16.6790,
+        "lng": 120.3345,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "Leisure"
+      },
+      {
+        "name": "St. John the Baptist Church",
+        "description": "A historical church with Spanish colonial architecture, the center of religious life in the town.",
+        "barangay": "Ili Norte",
+        "lat": 16.6805,
+        "lng": 120.3300,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "religious"
+      }
+    ],
+    "festivals": [
+      "Surf and Music Festival (October)",
+      "Feast of St. John the Baptist (June 24)"
+    ],
+    "specialties": [
+      "Surfing",
+      "Beach resorts and nightlife",
+      "Seafood and coastal cuisine"
+    ]
+  },
+  {
+    "name": "Sudipen",
+    "province": "La Union",
+    "lat": 16.8327,
+    "lng": 120.4445,
+    "description": "A serene upland town at the northernmost tip of La Union, Sudipen boasts lush rivers, mountains, and a strong indigenous identity.",
+    "history": "Sudipen was officially organized in 1906 and was originally inhabited by indigenous peoples, primarily the Kankanaey and Ibaloi groups.",
+    "population": 16994,
+    "classification": "4th class",
+    "barangay_count": 17,
+    "tourist_spots": [
+      {
+        "name": "Amburayan River",
+        "description": "A scenic river perfect for eco-trips, bamboo rafting, and viewing the mountainous terrain.",
+        "barangay": "Bigbiga",
+        "lat": 16.8370,
+        "lng": 120.4478,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "river"
+      },
+      {
+        "name": "Mount Kimmalagong",
+        "description": "A hidden hiking trail offering panoramic views and biodiversity.",
+        "barangay": "Old Central",
+        "lat": 16.8450,
+        "lng": 120.4550,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "mountain"
+      }
+    ],
+    "festivals": [
+      "Sudipen Town Fiesta (February)"
+    ],
+    "specialties": [
+      "River trekking",
+      "Indigenous heritage",
+      "Organic agriculture"
+    ]
+  },
+  {
+    "name": "Sto. Tomas",
+    "province": "La Union",
+    "lat": 16.2833,
+    "lng": 120.3667,
+    "description": "A coastal municipality in southern La Union known for its black sand beaches, dried fish industry, and local festivals.",
+    "history": "Established during the Spanish period, Sto. Tomas grew as a fishing town and was later incorporated into La Union upon the province's creation in 1850.",
+    "population": 40184,
+    "classification": "3rd class",
+    "barangay_count": 24,
+    "tourist_spots": [
+      {
+        "name": "Damortis Black Sand Beach",
+        "description": "A peaceful stretch of dark volcanic sand, ideal for beach walks and picnics.",
+        "barangay": "Damortis",
+        "lat": 16.2809,
+        "lng": 120.3694,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "beach"
+      },
+      {
+        "name": "Dried Fish Market",
+        "description": "A bustling public market where visitors can buy various types of locally processed dried fish.",
+        "barangay": "Central East",
+        "lat": 16.2840,
+        "lng": 120.3685,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "Market"
+      },
+      {
+        "name": "St. Thomas Aquinas Parish Church",
+        "description": "The central Catholic church of the town, showcasing colonial architecture and religious traditions.",
+        "barangay": "Poblacion",
+        "lat": 16.2835,
+        "lng": 120.3660,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "religious"
+      }
+    ],
+    "festivals": [
+      "Dried Fish Festival (March)",
+      "Feast of St. Thomas Aquinas (January 28)"
+    ],
+    "specialties": [
+      "Dried seafood",
+      "Fishing industry",
+      "Coastal delicacies"
+    ]
+  },
+  {
+    "name": "Tubao",
+    "province": "La Union",
+    "lat": 16.3833,
+    "lng": 120.4500,
+    "description": "A serene inland municipality of La Union known for its fertile lands, historical sites, and scenic mountain views.",
+    "history": "Tubao was officially founded in the mid-19th century and is historically an agricultural community. It played roles during both the Spanish and American periods, particularly as a local trade hub due to its strategic valley location.",
+    "population": 29238,
+    "classification": "4th class",
+    "barangay_count": 18,
+    "tourist_spots": [
+      {
+        "name": "Mount Kimmalogong",
+        "description": "A favorite among local hikers, this mountain offers panoramic views of La Union’s interior.",
+        "barangay": "Halog East",
+        "lat": 16.4001,
+        "lng": 120.4605,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "mountain"
+      },
+      {
+        "name": "St. Isidore the Farmer Parish Church",
+        "description": "A historic Catholic church built in honor of the patron saint of farmers, reflecting the town’s agricultural roots.",
+        "barangay": "Poblacion",
+        "lat": 16.3845,
+        "lng": 120.4487,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "religious"
+      },
+      {
+        "name": "Agno River Viewpoint",
+        "description": "A peaceful riverside area ideal for rest and photography along the border with Pangasinan.",
+        "barangay": "Rizal East",
+        "lat": 16.3759,
+        "lng": 120.4388,
+        "photos": [
+          {
+            "name": "Image 1",
+            "url": "https://picsum.photos/id/1088/400/300"
+          },
+          {
+            "name": "Image 2",
+            "url": "https://picsum.photos/id/1088/400/300"
+          }
+        ],
+        "category": "river"
+      }
+    ],
+    "festivals": [
+      "Tubao Town Fiesta (May 15)",
+      "Araw ng Tubao"
+    ],
+    "specialties": [
+      "Root crop farming",
+      "Mountain trekking",
+      "Local rice delicacies"
+    ]
+  }
+]
