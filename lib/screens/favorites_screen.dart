@@ -1,23 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../models/elyu_spot.dart';
 import '../services/firestore.dart';
 import '../providers/favorites_provider.dart';
 import '../widgets/spot_card.dart';
 
-class FavoritesScreen extends ConsumerWidget {
+class FavoritesScreen extends ConsumerStatefulWidget {
   const FavoritesScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<FavoritesScreen> createState() => _FavoritesScreenState();
+}
+
+class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
+  late final Stream<List<TouristSpot>> _spotsStream;
+
+  @override
+  void initState() {
+    super.initState();
+    _spotsStream = FirestoreService().getSpots('elyu'); // Cache the stream once
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final favoritesAsync = ref.watch(favoritesProvider);
 
     return favoritesAsync.when(
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, _) => Center(child: Text('Error: $error')),
+      error: (err, _) => Center(child: Text('Error loading favorites: $err')),
       data: (favorites) {
         return StreamBuilder<List<TouristSpot>>(
-          stream: FirestoreService().getSpots('elyu'),
+          stream: _spotsStream,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
@@ -49,8 +63,11 @@ class FavoritesScreen extends ConsumerWidget {
                 return SpotCard(
                   spot: spot,
                   isFavorite: true,
-                  onFavoriteToggle: (id) =>
-                      ref.read(favoritesProvider.notifier).toggle(id),
+                  onFavoriteToggle: (id) async {
+                    await ref
+                        .read(favoritesProvider.notifier)
+                        .toggle(spot.id); // Non-refreshing toggle
+                  },
                 );
               },
             );
