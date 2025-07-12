@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/elyu_spot.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import '../widgets/details_chips/category_chip.dart';
 
 class DetailScreen extends StatelessWidget {
   final TouristSpot spot;
@@ -69,7 +70,7 @@ class DetailScreen extends StatelessWidget {
 
                   // Name
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -82,11 +83,22 @@ class DetailScreen extends StatelessWidget {
                     ),
                   ),
 
-                  // Barangay, Municipality + Category
+                  // Category Chip (reusable)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: CategoryChip(category: spot.category),
+                    ),
+                  ),
+
+                  // Barangay + Municipality Row
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        // Barangay + Municipality text
                         Expanded(
                           child: Text(
                             'Brgy ${spot.barangay}, ${spot.municipality}',
@@ -96,15 +108,19 @@ class DetailScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Chip(
-                          label: Text(
-                            spot.category.isNotEmpty
-                                ? '${spot.category[0].toUpperCase()}${spot.category.substring(1)}'
-                                : 'Category',
-                            style: const TextStyle(fontSize: 12),
+
+                        // Google Maps icon button
+                        IconButton(
+                          onPressed: _openInMaps,
+                          icon: const Icon(Icons.location_on_outlined),
+                          tooltip: 'Open in Google Maps',
+                          color: Colors.teal.shade600,
+                          iconSize: 20,
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.teal.shade50,
+                            shape: const CircleBorder(),
+                            padding: const EdgeInsets.all(8),
                           ),
-                          backgroundColor: Colors.grey.shade200,
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
                         ),
                       ],
                     ),
@@ -124,21 +140,20 @@ class DetailScreen extends StatelessWidget {
                   const SizedBox(height: 24),
 
                   // Open in Google Maps button
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: ElevatedButton.icon(
-                      onPressed: _openInMaps,
-                      icon: const Icon(Icons.map),
-                      label: const Text('Open in Google Maps'),
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 12,
-                        ),
-                      ),
-                    ),
-                  ),
-
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 16),
+                  //   child: ElevatedButton.icon(
+                  //     onPressed: _openInMaps,
+                  //     icon: const Icon(Icons.map),
+                  //     label: const Text('Open in Google Maps'),
+                  //     style: ElevatedButton.styleFrom(
+                  //       padding: const EdgeInsets.symmetric(
+                  //         horizontal: 20,
+                  //         vertical: 12,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(height: 24),
                 ],
               ),

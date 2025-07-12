@@ -46,7 +46,7 @@ class _HeroCarouselState extends State<HeroCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height * 0.5;
+    final height = MediaQuery.of(context).size.height * 0.3;
 
     return SizedBox(
       height: height,

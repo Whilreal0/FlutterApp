@@ -14,6 +14,7 @@ class CategoryFilter extends StatelessWidget {
   Widget build(BuildContext context) {
     final categories = [
       'All',
+      'Park',
       'River',
       'Beach',
       'Industrial',
