@@ -66,7 +66,7 @@ class AboutScreen extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assets/images/mer.jpg'), // 📸 Change as needed
+                     backgroundImage: NetworkImage('https://picsum.photos/id/237/200/300'), // 🌐 Replace with your own URL if needed
                   ),
                   const SizedBox(width: 16),
                   Expanded(

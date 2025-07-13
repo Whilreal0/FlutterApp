@@ -20,10 +20,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final favoritesAsync = ref.watch(favoritesProvider);
 
     return Scaffold(
-      // ✅ Removed the AppBar entirely for a cleaner full-screen look
+      
       body: Column(
         children: [
-          // ✅ HeroCarousel with half-screen height and no titles
+          // ✅ HeroCarousel 
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.4,
             child: const HeroCarousel(),

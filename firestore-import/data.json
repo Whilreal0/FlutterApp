@@ -9,6 +9,7 @@
     "population": 66028,
     "classification": "1st class",
     "barangay_count": 49,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Basilica Minore of Our Lady of Charity",
@@ -103,6 +104,7 @@
     "population": 50000,
     "classification": "2nd class",
     "barangay_count": 24,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Aringay River",
@@ -197,6 +199,7 @@
     "population": 43000,
     "classification": "2nd class",
     "barangay_count": 47,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Bacnotan Cement Factory Viewpoint",
@@ -254,6 +257,7 @@
     "population": 15000,
     "classification": "5th class",
     "barangay_count": 10,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Bimmobil Falls",
@@ -311,6 +315,7 @@
     "population": 41000,
     "classification": "2nd class",
     "barangay_count": 36,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Balaoan Church (St. Nicholas of Tolentine Parish)",
@@ -368,6 +373,7 @@
     "population": 38000,
     "classification": "3rd class",
     "barangay_count": 33,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "St. Christopher Parish Church",
@@ -425,6 +431,7 @@
     "population": 75532,
     "classification": "1st class",
     "barangay_count": 39,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Bauang Beach",
@@ -482,6 +489,7 @@
     "population": 8167,
     "classification": "5th class",
     "barangay_count": 12,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Bulalakaw Falls",
@@ -539,6 +547,7 @@
     "population": 23600,
     "classification": "4th class",
     "barangay_count": 17,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Diego Silang Monument",
@@ -597,6 +606,7 @@
     "population": 37118,
     "classification": "3rd class",
     "barangay_count": 40,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Baluarte Watchtower",
@@ -655,6 +665,7 @@
     "population": 53861,
     "classification": "2nd class",
     "barangay_count": 37,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Basi Wine Processing Center",
@@ -712,6 +723,7 @@
     "population": 19035,
     "classification": "5th class",
     "barangay_count": 14,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "PUGAD (Pugo Adventure Park)",
@@ -769,6 +781,7 @@
     "population": 60760,
     "classification": "1st class",
     "barangay_count": 33,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Marcos Park and Nature Trail",
@@ -826,6 +839,7 @@
     "population": 125640,
     "classification": "1st class (city)",
     "barangay_count": 59,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Ma-Cho Temple",
@@ -902,6 +916,7 @@
     "population": 17913,
     "classification": "4th class",
     "barangay_count": 15,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Tangadan Falls",
@@ -959,6 +974,7 @@
     "population": 40790,
     "classification": "3rd class",
     "barangay_count": 41,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Urbiztondo Beach",
@@ -1035,6 +1051,7 @@
     "population": 16994,
     "classification": "4th class",
     "barangay_count": 17,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Amburayan River",
@@ -1092,6 +1109,7 @@
     "population": 40184,
     "classification": "3rd class",
     "barangay_count": 24,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Damortis Black Sand Beach",
@@ -1168,6 +1186,7 @@
     "population": 29238,
     "classification": "4th class",
     "barangay_count": 18,
+    "photo": "https://picsum.photos/id/57/400/300",
     "tourist_spots": [
       {
         "name": "Mount Kimmalogong",

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:elyu_app/services/firestore.dart';
 import 'package:elyu_app/widgets/carousel_indicator.dart';
+import 'package:cached_network_image/cached_network_image.dart'; // ✅ added
 
 class HeroCarousel extends StatefulWidget {
   const HeroCarousel({super.key});
@@ -21,6 +22,17 @@ class _HeroCarouselState extends State<HeroCarousel> {
   void initState() {
     super.initState();
     _spotsFuture = getTopSpotsFromDocuments();
+
+    // ✅ precache every header image once
+    _spotsFuture.then((spots) {
+      for (final spot in spots) {
+        final url = spot['photo'];
+        if (url != null && url.toString().isNotEmpty) {
+          precacheImage(CachedNetworkImageProvider(url), context);
+        }
+      }
+    });
+
     _startAutoScroll();
   }
 
@@ -81,14 +93,9 @@ class _HeroCarouselState extends State<HeroCarousel> {
                   final title = spot['name'] ?? '';
 
                   return GestureDetector(
-                    onTap: () {
-                      // TODO: Navigate to detail screen
-                    },
+                    onTap: () {/* TODO: Navigate to detail screen */},
                     child: Container(
-                      margin: EdgeInsets.zero,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                      ),
+                      decoration: BoxDecoration(color: Colors.grey[300]),
                       child: Stack(
                         fit: StackFit.expand,
                         children: [
@@ -99,36 +106,28 @@ class _HeroCarouselState extends State<HeroCarousel> {
                               if (progress == null) return child;
                               return const Center(child: CircularProgressIndicator());
                             },
-                            errorBuilder: (context, error, stackTrace) {
-                              return const Center(child: Icon(Icons.broken_image, size: 80));
-                            },
+                            errorBuilder: (_, __, ___) =>
+                                const Center(child: Icon(Icons.broken_image, size: 80)),
                           ),
                           Container(
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
-                                colors: [
-                                  Colors.black.withOpacity(0.5),
-                                  Colors.transparent,
-                                ],
+                                colors: [Colors.black54, Colors.transparent],
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
                               ),
                             ),
-                            padding: const EdgeInsets.fromLTRB(16, 16, 16, 30), // ➕ adds more space at the bottom
-                            alignment: Alignment.bottomCenter, // ✅ Center horizontally at the bottom
+                            padding: const EdgeInsets.fromLTRB(16, 16, 16, 30),
+                            alignment: Alignment.bottomCenter,
                             child: Text(
                               title,
-                              textAlign: TextAlign.center, // ✅ Align text center inside container
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 shadows: [
-                                  Shadow(
-                                    color: Colors.black54,
-                                    blurRadius: 4,
-                                    offset: Offset(1, 1),
-                                  ),
+                                  Shadow(color: Colors.black54, blurRadius: 4, offset: Offset(1, 1)),
                                 ],
                               ),
                             ),

@@ -1,6 +1,3 @@
-// lib/widgets/details_chips/category_chip.dart
-// Reusable, border‑less, emoji‑enhanced category chip.
-
 import 'package:flutter/material.dart';
 
 class CategoryChip extends StatelessWidget {
