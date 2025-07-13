@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:shimmer/shimmer.dart';
 import '../models/elyu_spot.dart';
 import '../services/firestore.dart';
 import 'municipality/municipality_list.dart';
+import '../widgets/places/shimmer_loader.dart';
 
 class PlacesScreen extends StatefulWidget {
   const PlacesScreen({super.key});
@@ -14,19 +14,18 @@ class PlacesScreen extends StatefulWidget {
 }
 
 class _PlacesScreenState extends State<PlacesScreen> {
-  /// Keep track so we don't precache the same URL twice.
   final _precached = <String>{};
 
-  /// Returns null if no photo field so we can show skeleton instead.
   Future<String?> _getPhotoForMunicipality(String muni) async {
-    final doc =
-        await FirebaseFirestore.instance.collection('elyu').doc(muni).get();
+    final doc = await FirebaseFirestore.instance
+        .collection('elyu')
+        .doc(muni)
+        .get();
     return (doc.exists && doc.data()?['photo'] != null)
         ? doc.data()!['photo'] as String
-        : null; // 🔄 null means no image → show skeleton
+        : null;
   }
 
-  /// Pre‑cache an image once.
   void _precacheImage(String url) {
     if (_precached.contains(url)) return;
     _precached.add(url);
@@ -47,7 +46,6 @@ class _PlacesScreenState extends State<PlacesScreen> {
               return const Center(child: Text('No data found.'));
             }
 
-            // ---- unique municipalities ----
             final muniSet = <String>{};
             for (final spot in snapshot.data!) {
               if (spot.municipality.trim().isNotEmpty) {
@@ -66,9 +64,8 @@ class _PlacesScreenState extends State<PlacesScreen> {
                 return FutureBuilder<String?>(
                   future: _getPhotoForMunicipality(muni),
                   builder: (context, urlSnap) {
-                    final photoUrl = urlSnap.data; // may be null
+                    final photoUrl = urlSnap.data;
 
-                    // Pre‑cache once (only if we actually have a URL)
                     if (photoUrl != null) {
                       WidgetsBinding.instance.addPostFrameCallback((_) {
                         _precacheImage(photoUrl);
@@ -91,54 +88,42 @@ class _PlacesScreenState extends State<PlacesScreen> {
                           child: Stack(
                             fit: StackFit.expand,
                             children: [
-                              // -------- Image OR Skeleton --------
                               if (photoUrl != null)
                                 CachedNetworkImage(
                                   imageUrl: photoUrl,
                                   fit: BoxFit.cover,
-                                  placeholder: (_, __) => Shimmer.fromColors(
-                                    baseColor: Colors.grey.shade300,
-                                    highlightColor: Colors.grey.shade100,
-                                    child:
-                                        Container(color: Colors.grey.shade300),
-                                  ),
-                                  errorWidget: (_, __, ___) => Container(
-                                    color: Colors.grey.shade300,
-                                    child: const Center(
-                                      child: Icon(Icons.broken_image),
-                                    ),
-                                  ),
+                                  placeholder: (context, url) =>
+                                      const MunicipalityShimmer(),
+                                  errorWidget: (context, url, error) =>
+                                      const MunicipalityShimmer(),
                                 )
                               else
-                                Shimmer.fromColors(
-                                  baseColor: Colors.grey.shade300,
-                                  highlightColor: Colors.grey.shade100,
-                                  child: Container(color: Colors.grey.shade300),
-                                ),
+                                const MunicipalityShimmer(),
 
-                              // -------- Overlay text --------
                               Container(
                                 alignment: Alignment.center,
                                 color: Colors.black.withOpacity(0.35),
                                 child: Text(
                                   muni,
                                   textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                          .textTheme
-                                          .headlineSmall
-                                          ?.copyWith(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            shadows: const [
-                                              Shadow(
-                                                  blurRadius: 4,
-                                                  color: Colors.black),
-                                            ],
-                                          ) ??
+                                  style:
+                                      Theme.of(
+                                        context,
+                                      ).textTheme.headlineSmall?.copyWith(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        shadows: const [
+                                          Shadow(
+                                            blurRadius: 4,
+                                            color: Colors.black,
+                                          ),
+                                        ],
+                                      ) ??
                                       const TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
                                 ),
                               ),
                             ],
