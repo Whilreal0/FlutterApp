@@ -63,9 +63,7 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: isSelected
-                              ? Colors.teal
-                              : Colors.grey.shade200,
+                          color: isSelected ? Colors.teal : Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
                             color: isSelected
@@ -115,13 +113,12 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
 
                     final filteredSpots = (_selectedCategory == 'All')
                         ? allSpots
-                        : allSpots
-                              .where(
-                                (s) =>
-                                    s.category.toLowerCase() ==
-                                    _selectedCategory.toLowerCase(),
-                              )
-                              .toList();
+                        : allSpots.where((spot) {
+                            final categories = spot.categories ?? []; // 👈 new list
+                            return categories.map((e) => e.toLowerCase()).contains(
+                                  _selectedCategory.toLowerCase(),
+                                );
+                          }).toList();
 
                     if (filteredSpots.isEmpty) {
                       return const Center(
@@ -133,11 +130,11 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
                       padding: const EdgeInsets.all(12),
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 10,
-                            crossAxisSpacing: 10,
-                            childAspectRatio: 3 / 4,
-                          ),
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        childAspectRatio: 3 / 4,
+                      ),
                       itemCount: filteredSpots.length,
                       itemBuilder: (context, index) {
                         final spot = filteredSpots[index];

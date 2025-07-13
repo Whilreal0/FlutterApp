@@ -88,7 +88,12 @@ class DetailScreen extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: CategoryChip(category: spot.category),
+                      child: Wrap(
+                        spacing: 8,
+                        children: spot.categories
+                            .map((cat) => CategoryChip(category: cat))
+                            .toList(),
+                      ),
                     ),
                   ),
 
@@ -138,22 +143,6 @@ class DetailScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 24),
-
-                  // Open in Google Maps button
-                  // Padding(
-                  //   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  //   child: ElevatedButton.icon(
-                  //     onPressed: _openInMaps,
-                  //     icon: const Icon(Icons.map),
-                  //     label: const Text('Open in Google Maps'),
-                  //     style: ElevatedButton.styleFrom(
-                  //       padding: const EdgeInsets.symmetric(
-                  //         horizontal: 20,
-                  //         vertical: 12,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                   const SizedBox(height: 24),
                 ],
               ),

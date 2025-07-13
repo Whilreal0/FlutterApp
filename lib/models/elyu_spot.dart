@@ -64,7 +64,7 @@ class TouristSpot {
   final double lat;
   final double lng;
   final List<String> photos;
-  final String category;
+  final List<String> categories; // ✅ CHANGED: support multiple categories
   final String municipality;   // 🏘️ Municipality it belongs to
 
   TouristSpot({
@@ -75,7 +75,8 @@ class TouristSpot {
     required this.lat,
     required this.lng,
     required this.photos,
-    required this.category,
+    required this.categories, // ✅ CHANGED
+   
     required this.municipality,
   });
 
@@ -104,7 +105,7 @@ class TouristSpot {
       barangay: map['barangay'] ?? '',
       lat: (map['lat'] ?? 0.0).toDouble(),
       lng: (map['lng'] ?? 0.0).toDouble(),
-      category: map['category'] ?? '',
+       categories: List<String>.from(map['categories'] ?? []), // ✅ CHANGED
       photos: photoUrls,
       municipality: municipality,
     );

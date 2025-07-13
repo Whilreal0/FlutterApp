@@ -1,8 +1,9 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:elyu_app/services/firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:elyu_app/widgets/carousel_indicator.dart';
-import 'package:cached_network_image/cached_network_image.dart'; // ✅ added
 
 class HeroCarousel extends StatefulWidget {
   const HeroCarousel({super.key});
@@ -12,36 +13,32 @@ class HeroCarousel extends StatefulWidget {
 }
 
 class _HeroCarouselState extends State<HeroCarousel> {
-  late Future<List<Map<String, dynamic>>> _spotsFuture;
-  final PageController _controller = PageController();
+  late Future<List<Map<String, dynamic>>> _randomSpotsFuture;
+  final _pageController = PageController();
+  final _rand = Random();
   int _currentIndex = 0;
   Timer? _autoScrollTimer;
-  int _itemCount = 0;
 
   @override
   void initState() {
     super.initState();
-    _spotsFuture = getTopSpotsFromDocuments();
-
-    // ✅ precache every header image once
-    _spotsFuture.then((spots) {
-      for (final spot in spots) {
-        final url = spot['photo'];
-        if (url != null && url.toString().isNotEmpty) {
-          precacheImage(CachedNetworkImageProvider(url), context);
-        }
-      }
-    });
-
+    _randomSpotsFuture = _get3RandomSpotsOnce(); // ← only once per app open
     _startAutoScroll();
   }
 
+  @override
+  void dispose() {
+    _pageController.dispose();
+    _autoScrollTimer?.cancel();
+    super.dispose();
+  }
+
   void _startAutoScroll() {
-    _autoScrollTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
-      if (_controller.hasClients && _itemCount > 1) {
-        final nextPage = (_currentIndex + 1) % _itemCount;
-        _controller.animateToPage(
-          nextPage,
+    _autoScrollTimer = Timer.periodic(const Duration(seconds: 5), (_) {
+      if (_pageController.hasClients) {
+        final next = (_currentIndex + 1) % 3;
+        _pageController.animateToPage(
+          next,
           duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
         );
@@ -49,12 +46,62 @@ class _HeroCarouselState extends State<HeroCarousel> {
     });
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    _autoScrollTimer?.cancel();
-    super.dispose();
+  /// Picks 3 distinct municipalities, one random spot each,
+/// reading EITHER the inline array OR the `tourist_spots` sub‑collection.
+Future<List<Map<String, dynamic>>> _get3RandomSpotsOnce() async {
+  final allTownDocs =
+      (await FirebaseFirestore.instance.collection('elyu').get()).docs.toList()
+        ..shuffle(_rand);
+
+  final List<Map<String, dynamic>> result = [];
+
+  for (final townDoc in allTownDocs) {
+    if (result.length >= 3) break;
+
+    final townName = townDoc.id;
+    final townData = townDoc.data();
+
+    // 1️⃣ Try inline array
+    List<Map<String, dynamic>> spots =
+        List<Map<String, dynamic>>.from(townData['tourist_spots'] ?? []);
+
+    // 2️⃣ If no inline array, try sub‑collection
+    if (spots.isEmpty) {
+      final sub = await townDoc.reference.collection('tourist_spots').get();
+       spots = sub.docs.map((d) => d.data()).toList();
+    }
+
+    if (spots.isEmpty) {
+      debugPrint('⚠️  $townName has no tourist spots.');
+      continue; // next municipality
+    }
+
+    spots.shuffle(_rand);
+
+    for (final spot in spots) {
+      final photos = List<Map<String, dynamic>>.from(spot['photos'] ?? []);
+      if (photos.isEmpty) continue;
+
+      final url = photos.first['url']?.toString() ?? '';
+      if (url.isEmpty) continue;
+
+      result.add({
+        'id': '${townName}_${spot['name']}',
+        'name': spot['name'] ?? 'Unknown',
+        'photo': url,
+      });
+
+      debugPrint('✅ Added "${spot['name']}" from $townName');
+      break; // only 1 spot per municipality
+    }
   }
+
+  debugPrint('🎯 Total spots selected for carousel: ${result.length}');
+  return result;
+}
+
+
+  // ─────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
@@ -63,82 +110,79 @@ class _HeroCarouselState extends State<HeroCarousel> {
     return SizedBox(
       height: height,
       child: FutureBuilder<List<Map<String, dynamic>>>(
-        future: _spotsFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+        future: _randomSpotsFuture,
+        builder: (context, snap) {
+          if (snap.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           }
-
-          if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text("No images available"));
+          if (!snap.hasData || snap.data!.isEmpty) {
+            return const Center(child: Text('No images available'));
           }
 
-          final spots = snapshot.data!;
-          _itemCount = spots.length;
-
+          final spots = snap.data!;
           return Stack(
             alignment: Alignment.bottomCenter,
             children: [
               PageView.builder(
-                controller: _controller,
+                controller: _pageController,
                 itemCount: spots.length,
-                onPageChanged: (index) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
-                itemBuilder: (context, index) {
-                  final spot = spots[index];
-                  final imageUrl = spot['photo'] ?? '';
+                onPageChanged: (i) => setState(() => _currentIndex = i),
+                itemBuilder: (_, i) {
+                  final spot = spots[i];
+                  final url = spot['photo'] ?? '';
                   final title = spot['name'] ?? '';
 
-                  return GestureDetector(
-                    onTap: () {/* TODO: Navigate to detail screen */},
-                    child: Container(
-                      decoration: BoxDecoration(color: Colors.grey[300]),
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: [
-                          Image.network(
-                            imageUrl,
-                            fit: BoxFit.cover,
-                            loadingBuilder: (context, child, progress) {
-                              if (progress == null) return child;
-                              return const Center(child: CircularProgressIndicator());
-                            },
-                            errorBuilder: (_, __, ___) =>
-                                const Center(child: Icon(Icons.broken_image, size: 80)),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [Colors.black54, Colors.transparent],
-                                begin: Alignment.bottomCenter,
-                                end: Alignment.topCenter,
-                              ),
-                            ),
-                            padding: const EdgeInsets.fromLTRB(16, 16, 16, 30),
-                            alignment: Alignment.bottomCenter,
-                            child: Text(
-                              title,
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                shadows: [
-                                  Shadow(color: Colors.black54, blurRadius: 4, offset: Offset(1, 1)),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
+                  return Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      CachedNetworkImage(
+                        imageUrl: url,
+                        fit: BoxFit.cover,
+                        placeholder: (_, __) =>
+                            const Center(child: CircularProgressIndicator()),
+                        errorWidget: (_, __, ___) =>
+                            const Center(child: Icon(Icons.broken_image)),
                       ),
-                    ),
+                      Container(
+                        alignment: Alignment.bottomCenter,
+                        padding: const EdgeInsets.fromLTRB(16, 16, 16, 30),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Colors.black54, Colors.transparent],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                        child: Text(
+                          title,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black54,
+                                blurRadius: 4,
+                                offset: Offset(1, 1),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   );
                 },
               ),
-              CarouselIndicator(currentIndex: _currentIndex, itemCount: spots.length),
+              Positioned(
+                bottom: 16,
+                left: 0,
+                right: 0,
+                child: CarouselIndicator(
+                  currentIndex: _currentIndex,
+                  itemCount: spots.length,
+                ),
+              ),
             ],
           );
         },

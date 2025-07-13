@@ -15,8 +15,8 @@
         "name": "Basilica Minore of Our Lady of Charity",
         "description": "A revered pilgrimage site known for its centuries-old religious significance and beautiful architecture.",
         "barangay": "Poblacion",
-        "lat": 16.3229,
-        "lng": 120.3612,
+        "lat": 16.322931,
+        "lng": 120.367412,
         "photos": [
           {
             "name": "Image 1",
@@ -27,7 +27,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious"]
       },
       {
         "name": "Museo de Iloko",
@@ -45,14 +45,14 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "Museum"
+        "categories": ["Museum"]
       },
       {
-        "name": "Agoo Damortis National Seashore Park",
-        "description": "A protected coastal area ideal for bird watching, fishing, and nature walks.",
-        "barangay": "Damortis",
-        "lat": 16.3041,
-        "lng": 120.3845,
+        "name": "Lakay Ago",
+        "description": "A peaceful escape surrounded by blooming bougainvillea, unique Hobbit House and Mushroom House, and—of course—delicious food made with love ",
+        "barangay": "San Agustin East",
+        "lat": 16.332335,
+        "lng": 120.377269,
         "photos": [
           {
             "name": "Image 1",
@@ -63,14 +63,14 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "park"
+        "categories": ["park", "mountain", "viewpoint"]
       },
       {
         "name": "Agoo Eco Park",
         "description": "Popular beaches for swimming, sunset viewing, and local seafood.",
         "barangay": "Santa Rita",
-        "lat": 16.3150,
-        "lng": 120.3680,
+        "lat": 16.353420957065925,
+        "lng": 120.3409245819018,
         "photos": [
           {
             "name": "Image 1",
@@ -81,7 +81,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "beach"
+        "categories": ["beach", "park"]
       }
     ],
     "festivals": [
@@ -110,8 +110,8 @@
         "name": "Aringay River",
         "description": "A scenic river perfect for kayaking, fishing, and riverside picnics.",
         "barangay": "San Benito",
-        "lat": 16.4010,
-        "lng": 120.3390,
+        "lat": 16.390699316861973,
+        "lng": 120.33994686027715,
         "photos": [
           {
             "name": "Image 1",
@@ -122,14 +122,14 @@
             "url": "https://picsum.photos/id/500/400/300"
           }
         ],
-        "category": "river"
+        "categories": ["river"]
       },
       {
         "name": "St. Lucy Parish Church",
         "description": "A historic church known for its colonial-era architecture and religious significance.",
         "barangay": "Poblacion",
-        "lat": 16.4005,
-        "lng": 120.3400,
+        "lat": 16.39545292485924,
+        "lng": 120.35524832417673,
         "photos": [
           {
             "name": "Image 1",
@@ -140,14 +140,14 @@
             "url": "https://picsum.photos/id/500/400/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious", "historical"]
       },
       {
         "name": "Aringay Beach",
         "description": "A quiet coastal stretch ideal for morning walks, swimming, and seaside relaxation.",
         "barangay": "Sto. Tomas",
-        "lat": 16.3905,
-        "lng": 120.3460,
+        "lat": 16.402900902374064,
+        "lng": 120.32804327834003,
         "photos": [
           {
             "name": "Image 1",
@@ -158,25 +158,7 @@
             "url": "https://picsum.photos/id/500/400/300"
           }
         ],
-        "category": "beach"
-      },
-      {
-        "name": "Bued River Viewpoint",
-        "description": "A serene spot overlooking the river valley and nearby mountain range.",
-        "barangay": "San Eugenio",
-        "lat": 16.4120,
-        "lng": 120.3505,
-        "photos": [
-          {
-            "name": "Image 1",
-            "url": "https://picsum.photos/id/500/400/300"
-          },
-          {
-            "name": "Image 2",
-            "url": "https://picsum.photos/id/500/400/300"
-          }
-        ],
-        "category": "Viewpoint"
+        "categories": ["beach"]
       }
     ],
     "festivals": [
@@ -217,7 +199,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "industrial"
+        "categories": ["industrial","viewpoint"]
       },
       {
         "name": "Darigayos Beach",
@@ -235,7 +217,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "beach"
+        "categories": ["beach"]
       }
     ],
     "festivals": [
@@ -275,7 +257,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "mountain"
+        "categories": ["mountain"]
       },
       {
         "name": "Bagulin Rice Terraces",
@@ -293,7 +275,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "cultural"
+        "categories": ["cultural","farm"]
       }
     ],
     "festivals": [
@@ -333,7 +315,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious"]
       },
       {
         "name": "Amburayan River",
@@ -351,7 +333,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "river"
+        "categories": ["river"]
       }
     ],
     "festivals": [
@@ -391,7 +373,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious","historical"]
       },
       {
         "name": "Amburayan River Viewpoint",
@@ -409,7 +391,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "river"
+        "categories": ["river","viewpoint"]
       }
     ],
     "festivals": [
@@ -449,7 +431,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "beach"
+        "categories": ["beach"]
       },
       {
         "name": "Gapuz Grapes Farm",
@@ -467,7 +449,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "farm"
+        "categories": ["farm"]
       }
     ],
     "festivals": [
@@ -507,7 +489,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "mountain"
+        "categories": ["mountain", "cultural"]
       },
       {
         "name": "Mount Burgos Viewpoint",
@@ -525,7 +507,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "mountain"
+        "categories": ["mountain", "viewpoint"]
       }
     ],
     "festivals": [
@@ -565,7 +547,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "historical"
+        "categories": ["historical","viewpoint"]
       },
       {
         "name": "Caba Seaside",
@@ -583,7 +565,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "beach"
+        "categories": ["beach"]
       }
     ],
     "festivals": [
@@ -624,7 +606,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "historical"
+        "categories": ["historical", "beach"]
       },
       {
         "name": "Pebble Beach",
@@ -642,7 +624,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "beach"
+        "categories": ["beach"]
       }
     ],
     "festivals": [
@@ -683,7 +665,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "cultural"
+        "categories": ["cultural"]
       },
       {
         "name": "Naguilian River",
@@ -701,7 +683,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "river"
+        "categories": ["river"]
       }
     ],
     "festivals": [
@@ -741,7 +723,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "Adventure"
+        "categories": ["adventure"]
       },
       {
         "name": "Tapuakan River",
@@ -759,7 +741,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "river"
+        "categories": ["river", "mountain"]
       }
     ],
     "festivals": [
@@ -799,7 +781,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "Park"
+        "categories": ["park"]
       },
       {
         "name": "Lomboy Cave",
@@ -817,7 +799,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "Cave"
+        "categories": ["cave", "adventure"]
       }
     ],
     "festivals": [
@@ -857,7 +839,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious"]
       },
       {
         "name": "Pindangan Ruins",
@@ -875,7 +857,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "historical"
+        "categories": ["historical"]
       },
       {
         "name": "Pagoda Hill",
@@ -893,7 +875,7 @@
             "url": "https://picsum.photos/id/1035/400/300"
           }
         ],
-        "category": "Viewpoint"
+        "categories": ["viewpoint", "mountain"]
       }
     ],
     "festivals": [
@@ -927,14 +909,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "Waterfall"
+        "categories": ["mountain","adventure"]
       },
       {
         "name": "Lon-oy Springs",
@@ -945,14 +927,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "river"
+        "categories": ["river"]
       }
     ],
     "festivals": [
@@ -985,14 +967,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "beach"
+        "categories": ["beach"]
       },
       {
         "name": "San Juan Beach Boardwalk",
@@ -1003,14 +985,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "Leisure"
+        "categories": ["beach"]
       },
       {
         "name": "St. John the Baptist Church",
@@ -1021,14 +1003,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious", "historical"]
       }
     ],
     "festivals": [
@@ -1062,14 +1044,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "river"
+        "categories": ["river","mountain"]
       },
       {
         "name": "Mount Kimmalagong",
@@ -1080,14 +1062,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "mountain"
+        "categories": ["mountain","adventure"]
       }
     ],
     "festivals": [
@@ -1120,14 +1102,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "beach"
+        "categories": ["beach"]
       },
       {
         "name": "Dried Fish Market",
@@ -1138,14 +1120,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "Market"
+        "categories": ["cultural"]
       },
       {
         "name": "St. Thomas Aquinas Parish Church",
@@ -1156,14 +1138,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious", "historical"]
       }
     ],
     "festivals": [
@@ -1197,14 +1179,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "mountain"
+        "categories": ["mountain"]
       },
       {
         "name": "St. Isidore the Farmer Parish Church",
@@ -1215,14 +1197,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "religious"
+        "categories": ["religious"]
       },
       {
         "name": "Agno River Viewpoint",
@@ -1233,14 +1215,14 @@
         "photos": [
           {
             "name": "Image 1",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           },
           {
             "name": "Image 2",
-            "url": "https://picsum.photos/id/1088/400/300"
+            "url": "https://picsum.photos/id/57/600/300"
           }
         ],
-        "category": "river"
+        "categories": ["river", "viewpoint"]
       }
     ],
     "festivals": [

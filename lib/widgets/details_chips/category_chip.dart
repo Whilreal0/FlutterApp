@@ -32,9 +32,7 @@ class CategoryChip extends StatelessWidget {
       shadowColor: Colors.transparent,
       surfaceTintColor: Colors.transparent,
       side: BorderSide.none,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(50),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       visualDensity: const VisualDensity(horizontal: -1, vertical: -3),
     );
@@ -72,6 +70,10 @@ class CategoryChip extends StatelessWidget {
         return Colors.purple.shade100;
       case 'farm':
         return Colors.lime.shade100;
+      case 'park':
+        return Colors.lightGreen.shade100; // ✅ added for park
+      case 'viewpoint':
+        return Colors.indigo.shade100; // ✅ added for viewpoint
       default:
         return Colors.grey.shade200;
     }
@@ -95,6 +97,10 @@ class CategoryChip extends StatelessWidget {
         return '🛕';
       case 'farm':
         return '🌾';
+      case 'park':
+        return '🏞️'; // ✅ added for park
+      case 'viewpoint':
+        return '🔭'; // ✅ added for viewpoint
       default:
         return '📍';
     }

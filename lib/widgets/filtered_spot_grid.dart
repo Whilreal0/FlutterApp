@@ -54,10 +54,11 @@ class _FilteredSpotGridState extends State<FilteredSpotGrid> {
         _filteredSpots = (widget.selectedCategory == null ||
                 widget.selectedCategory!.toLowerCase() == 'all')
             ? allSpots
-            : allSpots
-                .where((s) => s.category.toLowerCase() ==
-                    widget.selectedCategory!.toLowerCase())
-                .toList();
+            : allSpots.where((s) {
+                // 🔄 Match if any of the spot's categories matches the selected
+                return s.categories.any((cat) =>
+                    cat.toLowerCase() == widget.selectedCategory!.toLowerCase());
+              }).toList();
 
         return GridView.builder(
           padding: const EdgeInsets.all(8),

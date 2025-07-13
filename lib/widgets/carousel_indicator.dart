@@ -12,22 +12,21 @@ class CarouselIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 16,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(itemCount, (index) {
-          return Container(
-            margin: const EdgeInsets.symmetric(horizontal: 4),
-            width: currentIndex == index ? 12 : 8,
-            height: currentIndex == index ? 12 : 8,
-            decoration: BoxDecoration(
-              color: currentIndex == index ? Colors.white : Colors.grey,
-              shape: BoxShape.circle,
-            ),
-          );
-        }),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(itemCount, (index) {
+        final isActive = currentIndex == index;
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 250),
+          margin: const EdgeInsets.symmetric(horizontal: 4),
+          width: isActive ? 12 : 8,
+          height: isActive ? 12 : 8,
+          decoration: BoxDecoration(
+            color: isActive ? Colors.white : Colors.grey,
+            shape: BoxShape.circle,
+          ),
+        );
+      }),
     );
   }
 }

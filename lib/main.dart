@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_config.dart';
 import 'main_scaffold.dart';
 
@@ -8,7 +9,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
   await FirebaseConfig.initialize();
-
+  FirebaseFirestore.instance.settings = const Settings(
+  persistenceEnabled: true,
+);
   runApp(const ProviderScope(child: MyApp()));
 }
 
