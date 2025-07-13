@@ -114,7 +114,7 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
                     final filteredSpots = (_selectedCategory == 'All')
                         ? allSpots
                         : allSpots.where((spot) {
-                            final categories = spot.categories ?? []; // 👈 new list
+                            final categories = spot.categories;
                             return categories.map((e) => e.toLowerCase()).contains(
                                   _selectedCategory.toLowerCase(),
                                 );
