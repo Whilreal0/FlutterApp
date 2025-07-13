@@ -17,12 +17,13 @@ class _PlacesScreenState extends State<PlacesScreen> {
   /// Keep track so we don't precache the same URL twice.
   final _precached = <String>{};
 
-  Future<String> _getPhotoForMunicipality(String muni) async {
+  /// Returns null if no photo field so we can show skeleton instead.
+  Future<String?> _getPhotoForMunicipality(String muni) async {
     final doc =
         await FirebaseFirestore.instance.collection('elyu').doc(muni).get();
     return (doc.exists && doc.data()?['photo'] != null)
         ? doc.data()!['photo'] as String
-        : 'https://via.placeholder.com/600x300?text=${Uri.encodeComponent(muni)}';
+        : null; // 🔄 null means no image → show skeleton
   }
 
   /// Pre‑cache an image once.
@@ -62,16 +63,17 @@ class _PlacesScreenState extends State<PlacesScreen> {
               itemBuilder: (context, index) {
                 final muni = municipalities[index];
 
-                return FutureBuilder<String>(
+                return FutureBuilder<String?>(
                   future: _getPhotoForMunicipality(muni),
                   builder: (context, urlSnap) {
-                    final photoUrl = urlSnap.data ??
-                        'https://via.placeholder.com/600x300?text=${Uri.encodeComponent(muni)}';
+                    final photoUrl = urlSnap.data; // may be null
 
-                    // Pre‑cache once (after URL determined)
-                    WidgetsBinding.instance.addPostFrameCallback((_) {
-                      _precacheImage(photoUrl);
-                    });
+                    // Pre‑cache once (only if we actually have a URL)
+                    if (photoUrl != null) {
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        _precacheImage(photoUrl);
+                      });
+                    }
 
                     return InkWell(
                       borderRadius: BorderRadius.circular(16),
@@ -89,18 +91,32 @@ class _PlacesScreenState extends State<PlacesScreen> {
                           child: Stack(
                             fit: StackFit.expand,
                             children: [
-                              CachedNetworkImage(
-                                imageUrl: photoUrl,
-                                fit: BoxFit.cover,
-                                placeholder: (context, url) => Shimmer.fromColors(
+                              // -------- Image OR Skeleton --------
+                              if (photoUrl != null)
+                                CachedNetworkImage(
+                                  imageUrl: photoUrl,
+                                  fit: BoxFit.cover,
+                                  placeholder: (_, __) => Shimmer.fromColors(
+                                    baseColor: Colors.grey.shade300,
+                                    highlightColor: Colors.grey.shade100,
+                                    child:
+                                        Container(color: Colors.grey.shade300),
+                                  ),
+                                  errorWidget: (_, __, ___) => Container(
+                                    color: Colors.grey.shade300,
+                                    child: const Center(
+                                      child: Icon(Icons.broken_image),
+                                    ),
+                                  ),
+                                )
+                              else
+                                Shimmer.fromColors(
                                   baseColor: Colors.grey.shade300,
                                   highlightColor: Colors.grey.shade100,
-                                  child: Container(color: Colors.grey),
+                                  child: Container(color: Colors.grey.shade300),
                                 ),
-                                errorWidget: (_, __, ___) => const Center(
-                                  child: Icon(Icons.broken_image),
-                                ),
-                              ),
+
+                              // -------- Overlay text --------
                               Container(
                                 alignment: Alignment.center,
                                 color: Colors.black.withOpacity(0.35),
