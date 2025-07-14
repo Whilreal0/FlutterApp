@@ -9,19 +9,23 @@ class DetailScreen extends StatelessWidget {
 
   const DetailScreen({super.key, required this.spot});
 
-  void _openInMaps() async {
-    final url =
-        'https://www.google.com/maps/search/?api=1&query=${spot.lat},${spot.lng}';
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(Uri.parse(url));
-    } else {
-      throw 'Could not launch Google Maps';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final isTablet = MediaQuery.of(context).size.shortestSide >= 600;
+
+    // ✅ Move the function here so it can access `spot`
+    void _openInMaps() async {
+      final url =
+          'https://www.google.com/maps/search/?api=1&query=${spot.lat},${spot.lng}';
+      final uri = Uri.parse(url);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not open Google Maps')),
+        );
+      }
+    }
 
     return Scaffold(
       body: LayoutBuilder(
@@ -83,7 +87,7 @@ class DetailScreen extends StatelessWidget {
                     ),
                   ),
 
-                  // Category Chip (reusable)
+                  // Category Chips
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
                     child: Align(
@@ -103,7 +107,6 @@ class DetailScreen extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        // Barangay + Municipality text
                         Expanded(
                           child: Text(
                             'Brgy ${spot.barangay}, ${spot.municipality}',
@@ -113,8 +116,6 @@ class DetailScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-
-                        // Google Maps icon button
                         IconButton(
                           onPressed: _openInMaps,
                           icon: const Icon(Icons.location_on_outlined),
@@ -142,7 +143,6 @@ class DetailScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 24),
                   const SizedBox(height: 24),
                 ],
               ),
